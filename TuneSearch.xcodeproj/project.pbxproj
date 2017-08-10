@@ -16,6 +16,10 @@
 		63255FFE1ED3F56D008695CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63255FFC1ED3F56D008695CE /* LaunchScreen.storyboard */; };
 		632560091ED3F56D008695CE /* TuneSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632560081ED3F56D008695CE /* TuneSearchTests.swift */; };
 		632560141ED3F56D008695CE /* TuneSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632560131ED3F56D008695CE /* TuneSearchUITests.swift */; };
+		632560221ED3FA8E008695CE /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632560211ED3FA8E008695CE /* AppConstants.swift */; };
+		632560241ED3FB8D008695CE /* HTTPGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632560231ED3FB8D008695CE /* HTTPGetRequest.swift */; };
+		632560261ED4005A008695CE /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632560251ED4005A008695CE /* TrackTableViewCell.swift */; };
+		632560281ED7238D008695CE /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 632560271ED7238D008695CE /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		6325600F1ED3F56D008695CE /* TuneSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuneSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		632560131ED3F56D008695CE /* TuneSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneSearchUITests.swift; sourceTree = "<group>"; };
 		632560151ED3F56D008695CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		632560211ED3FA8E008695CE /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		632560231ED3FB8D008695CE /* HTTPGetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPGetRequest.swift; path = ../HTTPGetRequest.swift; sourceTree = "<group>"; };
+		632560251ED4005A008695CE /* TrackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackTableViewCell.swift; path = ../TrackTableViewCell.swift; sourceTree = "<group>"; };
+		632560271ED7238D008695CE /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +109,18 @@
 		63255FED1ED3F56D008695CE /* TuneSearch */ = {
 			isa = PBXGroup;
 			children = (
+				63255FF01ED3F56D008695CE /* TuneSearch.xcdatamodeld */,
+				632560211ED3FA8E008695CE /* AppConstants.swift */,
 				63255FEE1ED3F56D008695CE /* AppDelegate.swift */,
+				632560251ED4005A008695CE /* TrackTableViewCell.swift */,
+				632560231ED3FB8D008695CE /* HTTPGetRequest.swift */,
 				63255FF31ED3F56D008695CE /* MasterViewController.swift */,
 				63255FF51ED3F56D008695CE /* DetailViewController.swift */,
 				63255FF71ED3F56D008695CE /* Main.storyboard */,
 				63255FFA1ED3F56D008695CE /* Assets.xcassets */,
+				632560271ED7238D008695CE /* placeholder.png */,
 				63255FFC1ED3F56D008695CE /* LaunchScreen.storyboard */,
 				63255FFF1ED3F56D008695CE /* Info.plist */,
-				63255FF01ED3F56D008695CE /* TuneSearch.xcdatamodeld */,
 			);
 			path = TuneSearch;
 			sourceTree = "<group>";
@@ -242,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63255FFE1ED3F56D008695CE /* LaunchScreen.storyboard in Resources */,
+				632560281ED7238D008695CE /* placeholder.png in Resources */,
 				63255FFB1ED3F56D008695CE /* Assets.xcassets in Resources */,
 				63255FF91ED3F56D008695CE /* Main.storyboard in Resources */,
 			);
@@ -268,10 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63255FEF1ED3F56D008695CE /* AppDelegate.swift in Sources */,
 				63255FF21ED3F56D008695CE /* TuneSearch.xcdatamodeld in Sources */,
+				632560261ED4005A008695CE /* TrackTableViewCell.swift in Sources */,
+				632560241ED3FB8D008695CE /* HTTPGetRequest.swift in Sources */,
+				63255FEF1ED3F56D008695CE /* AppDelegate.swift in Sources */,
 				63255FF41ED3F56D008695CE /* MasterViewController.swift in Sources */,
 				63255FF61ED3F56D008695CE /* DetailViewController.swift in Sources */,
+				632560221ED3FA8E008695CE /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,10 +441,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DK89B3CEZ5;
 				INFOPLIST_FILE = TuneSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapinfuse.TuneSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -438,10 +456,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DK89B3CEZ5;
 				INFOPLIST_FILE = TuneSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tapinfuse.TuneSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -522,6 +542,7 @@
 				6325601A1ED3F56D008695CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6325601B1ED3F56D008695CE /* Build configuration list for PBXNativeTarget "TuneSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +551,7 @@
 				6325601D1ED3F56D008695CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6325601E1ED3F56D008695CE /* Build configuration list for PBXNativeTarget "TuneSearchUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +560,7 @@
 				632560201ED3F56D008695CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

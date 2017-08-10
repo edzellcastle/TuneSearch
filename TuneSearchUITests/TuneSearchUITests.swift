@@ -28,9 +28,38 @@ class TuneSearchUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testOne() {
+
+        XCUIDevice.shared().orientation = .portrait
+        
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        let searchController = tablesQuery.searchFields["Search"]
+        searchController.tap()
+        let searchSearchField = app.searchFields["Search"]
+        searchSearchField.typeText("A")
+        let lKey = app.keys["l"]
+        lKey.tap()
+        lKey.tap()
+        app.keys["m"].tap()
+        app.keys["a"].tap()
+        app.keys["n"].tap()
+        
+        app.typeText("\n")
     }
     
+    func testTwo() {
+        
+        XCUIDevice.shared().orientation = .portrait
+        
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        let searchController = tablesQuery.searchFields["Search"]
+        searchController.tap()
+        app.searchFields["Search"].typeText("Albert king")
+        app.typeText("\n")
+   
+        tablesQuery.children(matching: .cell).element(boundBy: 7).children(matching: .other).element.swipeDown()
+        tablesQuery.children(matching: .cell).element(boundBy: 7).children(matching: .other).element.swipeUp()
+    }
 }
