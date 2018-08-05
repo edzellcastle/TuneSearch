@@ -30,7 +30,7 @@ class TuneSearchUITests: XCTestCase {
     
     func testOne() {
 
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         
         let app = XCUIApplication()
         let tablesQuery = app.tables
@@ -50,7 +50,7 @@ class TuneSearchUITests: XCTestCase {
     
     func testTwo() {
         
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         
         let app = XCUIApplication()
         let tablesQuery = app.tables
