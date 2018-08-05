@@ -196,7 +196,7 @@ class MasterViewController: UITableViewController {
         trackData.setValue(collectionID, forKeyPath: "collectionID")
         trackData.setValue(albumImageLink, forKeyPath: "albumImage")
         trackData.setValue(albumImageLargeLink, forKeyPath: "albumImageLarge")
-        trackData.setValue(previewLink, forKeyPath: "sampleLink")
+        //trackData.setValue(previewLink, forKeyPath: "sampleLink")
         
         do {
             if persistentContainer.viewContext.hasChanges {
@@ -249,7 +249,7 @@ class MasterViewController: UITableViewController {
         
         cell.albumImageView?.image = UIImage(named: "placeholder")
         if let collectionID = SongInfo.collectionID {
-            
+            print("collection id = \(collectionID)")
             // Use image in cache if it is available
             if (imageCache.object(forKey: collectionID as NSString)) != nil {
                 cell.albumImageView?.image = self.imageCache.object(forKey: collectionID as NSString)

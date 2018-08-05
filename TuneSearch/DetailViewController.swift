@@ -85,11 +85,11 @@ class DetailViewController: UIViewController {
         }
     }
 
-    @IBAction func playButtonAction(_ sender: Any) {
-        
-       // play the sample
-        
-    }
+//    @IBAction func playButtonAction(_ sender: Any) {
+//
+//       // play the sample
+//
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -102,7 +102,5 @@ class DetailViewController: UIViewController {
             configureView()
         }
     }
-
-
 }
 
