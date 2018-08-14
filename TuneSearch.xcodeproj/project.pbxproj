@@ -20,6 +20,8 @@
 		632560241ED3FB8D008695CE /* HTTPGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632560231ED3FB8D008695CE /* HTTPGetRequest.swift */; };
 		632560261ED4005A008695CE /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632560251ED4005A008695CE /* TrackTableViewCell.swift */; };
 		632560281ED7238D008695CE /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 632560271ED7238D008695CE /* placeholder.png */; };
+		63448002211E532F00C40377 /* TrackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63448001211E532F00C40377 /* TrackResponse.swift */; };
+		6344802221234ADE00C40377 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344802121234ADE00C40377 /* Track.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		632560231ED3FB8D008695CE /* HTTPGetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPGetRequest.swift; path = ../HTTPGetRequest.swift; sourceTree = "<group>"; };
 		632560251ED4005A008695CE /* TrackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackTableViewCell.swift; path = ../TrackTableViewCell.swift; sourceTree = "<group>"; };
 		632560271ED7238D008695CE /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		63448001211E532F00C40377 /* TrackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackResponse.swift; sourceTree = "<group>"; };
+		6344802121234ADE00C40377 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				63255FF01ED3F56D008695CE /* TuneSearch.xcdatamodeld */,
+				63448001211E532F00C40377 /* TrackResponse.swift */,
+				6344802121234ADE00C40377 /* Track.swift */,
 				632560211ED3FA8E008695CE /* AppConstants.swift */,
 				63255FEE1ED3F56D008695CE /* AppDelegate.swift */,
 				632560251ED4005A008695CE /* TrackTableViewCell.swift */,
@@ -289,8 +295,10 @@
 				632560241ED3FB8D008695CE /* HTTPGetRequest.swift in Sources */,
 				63255FEF1ED3F56D008695CE /* AppDelegate.swift in Sources */,
 				63255FF41ED3F56D008695CE /* MasterViewController.swift in Sources */,
+				6344802221234ADE00C40377 /* Track.swift in Sources */,
 				63255FF61ED3F56D008695CE /* DetailViewController.swift in Sources */,
 				632560221ED3FA8E008695CE /* AppConstants.swift in Sources */,
+				63448002211E532F00C40377 /* TrackResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

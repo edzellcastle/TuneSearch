@@ -94,17 +94,17 @@ class MasterViewController: UITableViewController {
                 moc?.delete(track)
             }
             try moc?.save()
-            search(text: searchText)
+            search2(text: searchText)
         } catch {
             fatalError("Failed to fetch tracks: \(error)")
         }
     }
     
     // Query iTunes for music
-    
-    func search(text: String) {
+    func search2(text: String) {
         let searchString = text.replacingOccurrences(of: " ", with: "+")
-        
+        let defaultString = ""
+
         // create the http request
         let musicSearchEndpoint = iTunesSearchEndpoint + searchString
         let httpGetRequest = HTTPGetRequest(httpEndPointString: musicSearchEndpoint)
@@ -115,66 +115,31 @@ class MasterViewController: UITableViewController {
                 print(error!.localizedDescription)
             } else {
                 do {
-                    if let json = try? JSONSerialization.jsonObject(with: data!, options: []) {
-                        print(json)
-                        if let dictionary = json as? NSDictionary {
-                            if let array = dictionary["results"] as? NSArray {
-                                for obj in array {
-                                    var artist: String
-                                    var track: String
-                                    var album: String
-                                    var collectionID: String
-                                    var albumImageString: String
-                                    var albumImageLargeString :String
-                                    var previewLink: String
-                                    if let dict = obj as? NSDictionary {
-                                        if let preview = dict.value(forKey: "previewUrl") as! String? {
-                                            previewLink = preview
-                                        } else {
-                                            previewLink = ""
-                                        }
-                                        if let artistName = dict.value(forKey: "artistName") as! String? {
-                                            artist = artistName
-                                        } else {
-                                            artist = ""
-                                        }
-                                        if let trackName = dict.value(forKey: "trackName") as! String? {
-                                            track = trackName
-                                        } else {
-                                            track = ""
-                                        }
-                                        if let albumName = dict.value(forKey: "collectionName") as! String? {
-                                            album = albumName
-                                        } else {
-                                            album = ""
-                                        }
-                                        if let collectionIdentification = dict.value(forKey: "collectionId") as? NSNumber {
-                                            collectionID = collectionIdentification.stringValue
-                                        } else {
-                                            collectionID = ""
-                                        }
-                                        if let albumImageStr = dict.value(forKey: "artworkUrl60") as! String? {
-                                            albumImageString = albumImageStr
-                                        } else {
-                                            albumImageString = ""
-                                        }
-                                        if let albumImageLargeStr = dict.value(forKey: "artworkUrl100") as! String? {
-                                            albumImageLargeString = albumImageLargeStr
-                                        } else {
-                                            albumImageLargeString = ""
-                                        }
-                                        self.saveTrackData(artistName: artist,
-                                                           trackName: track,
-                                                           albumName: album,
-                                                           collectionID: collectionID,
-                                                           albumImageLink: albumImageString,
-                                                           albumImageLargeLink: albumImageLargeString,
-                                                           previewLink: previewLink)
-                                    }
-                                }
-                            }
-                        }
+                    let decoder = JSONDecoder()
+                    let trackResponse = try decoder.decode(TrackResponse.self, from: data!)
+                    for index in 0..<trackResponse.resultCount {
+                        
+                        let track = trackResponse.results[index]
+                     
+                        let artistName = track.artistName ?? defaultString
+                        let trackName = track.trackName ?? defaultString
+                        let albumName = track.collectionName ?? defaultString
+                        let collectionID = track.collectionId ?? 0
+                        let albumImageLink = track.artworkUrl60 ?? defaultString
+                        let albumImageLargeLink = track.artworkUrl100 ?? defaultString
+                        let previewLink = track.previewUrl ?? defaultString
+                        
+                        self.saveTrackData(artistName: artistName,
+                                           trackName: trackName,
+                                           albumName: albumName,
+                                           collectionID: String(collectionID),
+                                           albumImageLink: albumImageLink,
+                                           albumImageLargeLink: albumImageLargeLink,
+                                           previewLink: previewLink)
                     }
+                    
+                } catch let error {
+                    print(error)
                 }
             }
         })
